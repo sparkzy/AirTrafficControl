@@ -1,0 +1,61 @@
+AC Class { <-- Make abstract? These are the minimum # of requirements for an AC
+	boolean type: true for passenger AC false for cargo AC
+	boolean size: true for small false for large
+}
+
+System boot used to start the system
+- Some function to allow AC's to be added or removed from the queue
+- Does data get preserved between boots of the system?
+	* some ideas
+		- start w/ raw functionality in Java, no data preservavation
+		- then, once everything works as the exercise bescribes, do one of the
+		  following
+			* create an SQL DB to store data and set up spring repo's to
+			  access/store data
+				- more complex, once DB is created connecting is easy --> may
+				  take less time? if the complexity doesn't slow me down vs UI
+				  simplicity
+				- I want to do this for more funtionality but UI will let me
+				  test stuff more easily and may be quicker and more practical
+				  to do first
+			* create a UI in Angular to boot, enqueue, and dequeue
+				- simpler (just really need 3/4 buttons
+				- leaning towards this for time's sake
+
+Enqueue aircraft used to insert a new AC into the system
+- Java: Spring controller POST -> service layer not much going on? Just passing
+        the object to the repo, keeping this layer for best practices sake and
+		future potential changes -> repo insert new AC into DB
+
+Dequeue:
+- Pass b4 cargo
+- Large b4 small
+- queue not a stack (first in first out)
+- precedence: Exercise specifies "Large AC’s of a given type have removal
+              precedence over Small AC’s of the same type." Does this assume
+			  type is considered before size?It seems to so that is the
+			  assumption I will be working with.
+	1. Large Pass
+	2. Small Pass
+	3. Large Cargo
+	4. Small Cargo
+	
+Develop one or more data structures to hold the state of an individual AC
+- 
+
+Develop one or more data structures to hold the state of the AC queue
+- State = order? number of AC's in the queue?
+- 
+
+Define data structures and/or constants needed to represent requests
+- 
+
+Develop the code for a procedure called aqm_request_process() which accepts any
+of the three defined requests and follows the above guidelines to implement an
+aircraft queue manager
+- 
+
+Versions:
+Java 8
+Node.js 12.16.1
+Angular 9
