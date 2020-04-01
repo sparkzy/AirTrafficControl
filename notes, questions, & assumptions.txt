@@ -1,8 +1,3 @@
-AC Class { <-- Make abstract? These are the minimum # of requirements for an AC
-	boolean type: true for passenger AC false for cargo AC
-	boolean size: true for small false for large
-}
-
 System boot used to start the system
 - Some function to allow AC's to be added or removed from the queue
 - Does data get preserved between boots of the system?
